@@ -7,7 +7,9 @@ services:
         - 3000:3000
       volumes:
         - ./backend:/app
-    dbname: 
+      depends_on:
+        - dbserver
+    dbserver: 
       image: mysql:latest
       ports: 
         - 3306:3306   
