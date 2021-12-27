@@ -1,7 +1,9 @@
 FROM node:12-alpine
 
-WORKDIR . /app
+WORKDIR /
 
-CMD npm init -y && npm install
+COPY . /app
 
-ENTRYPOINT [ "tail -f", "/dev/null" ]
+EXPOSE 3000
+
+ENTRYPOINT ["tail", "-f", "/dev/null"]
