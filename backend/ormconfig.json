@@ -1,0 +1,13 @@
+{
+    "type": "mysql",
+    "host": "dbserver",
+    "port": 3306,
+    "username": "root",
+    "password": "",
+    "database": "nlwValoriza",
+    "entities": ["entity/*.js"],
+    "migrations": ["database/migrations/*.js"],
+    "cli": {
+        "migrationsDir": "src/database/migrations"
+    }
+ }

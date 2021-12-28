@@ -1,9 +1,12 @@
 FROM node:12-alpine
 
-WORKDIR /
+WORKDIR /app
 
-COPY . /app
+COPY . .
 
-EXPOSE 3000
+RUN npm install -g ts-node-dev
+RUN npm install -g typeorm
 
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+RUN pwd
+
+CMD ["npm", "run", "dev"]
