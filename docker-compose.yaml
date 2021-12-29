@@ -2,19 +2,27 @@ version: '3'
 
 services:
     api: 
-      build: ./backend
+      build: 
+        context: .
+        dockerfile: ./backend/Dockerfile
       ports:
         - 3000:3000
+
       volumes:
         - ./backend:/app
+
       depends_on:
         - dbserver
+
     dbserver: 
       image: mysql:latest
+
       ports: 
         - 3306:3306   
+
       volumes:
         - ./database:/var/lib/mysql
+
       environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD=yes
 
