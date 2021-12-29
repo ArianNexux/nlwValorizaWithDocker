@@ -5,8 +5,8 @@
     "username": "root",
     "password": "",
     "database": "nlwValoriza",
-    "entities": ["entity/*.js"],
-    "migrations": ["database/migrations/*.js"],
+    "entities": ["entity/*.ts"],
+    "migrations": ["src/database/migrations/*.ts"],
     "cli": {
         "migrationsDir": "src/database/migrations"
     }

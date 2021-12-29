@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:16-alpine3.12
 
 WORKDIR /app
 
@@ -9,4 +9,4 @@ RUN npm install -g typeorm
 
 RUN pwd
 
-CMD ["npm", "run", "dev"]
+CMD ["tail", "-f", "/dev/null"]
