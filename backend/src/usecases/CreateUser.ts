@@ -1,9 +1,12 @@
-import IUserRequest from './interfaces/IUserRequest'
+import IUserRequest from '../interfaces/IUserRequest'
+import IUseCase from '../interfaces/IUseCase'
 import { UserRepositories } from '../repositories/UserRepositories'
-class CreateUser {
+class CreateUser  implements IUseCase{
 
-    async handle({ name, email, admin}: IUserRequest) {
+    async handle({ name, email, admin}: IUserRequest): Promise<any> {
+        
         const userRepository = new UserRepositories();
+
         if(!email){
             throw new Error("incorrect email")
         }
