@@ -1,11 +1,12 @@
 import IUserRequest from '../interfaces/IUserRequest'
+import { getCustomRepository } from 'typeorm'
 import IUseCase from '../interfaces/IUseCase'
 import { UserRepositories } from '../repositories/UserRepositories'
 class CreateUser  implements IUseCase{
 
     async handle({ name, email, admin}: IUserRequest): Promise<any> {
         
-        const userRepository = new UserRepositories();
+        const userRepository = getCustomRepository(UserRepositories);
 
         if(!email){
             throw new Error("incorrect email")
