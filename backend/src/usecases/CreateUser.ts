@@ -17,7 +17,7 @@ class CreateUser  implements IUseCase{
          })
 
          if(userAlreadyExists){
-             throw new Error("user already exists")
+             throw new Error("User Already Exists")
          }
 
          const user = userRepository.create({
