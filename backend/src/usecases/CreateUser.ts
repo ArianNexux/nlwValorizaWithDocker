@@ -2,7 +2,8 @@ import IUserRequest from '../interfaces/IUserRequest'
 import { getCustomRepository } from 'typeorm'
 import IUseCase from '../interfaces/IUseCase'
 import { UserRepositories } from '../repositories/UserRepositories'
-class CreateUser  implements IUseCase{
+
+export default class CreateUser  implements IUseCase{
 
     async handle({ name, email, admin}: IUserRequest): Promise<any> {
         
@@ -30,6 +31,4 @@ class CreateUser  implements IUseCase{
          
          return user;
     }
-}
-
-export { CreateUser }
+} 
