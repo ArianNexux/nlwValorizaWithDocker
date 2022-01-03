@@ -1,7 +1,7 @@
 import {Entity, PrimaryColumn, Column, UpdateDateColumn, CreateDateColumn} from "typeorm";
 
 @Entity("tags")
-export class Tags {
+export default class Tags {
 
     @PrimaryColumn()
     readonly id: string;
