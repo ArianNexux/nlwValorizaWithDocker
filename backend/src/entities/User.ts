@@ -2,7 +2,7 @@ import {Column, Entity, PrimaryColumn, UpdateDateColumn, CreateDateColumn} from 
 import { v4 as uuidv4 } from 'uuid';
 
 @Entity("users")
-export class User {
+export default class User {
 
     @PrimaryColumn()
     id: string
