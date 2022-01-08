@@ -1,7 +1,7 @@
 import IUserRequest from '../interfaces/IUserRequest'
 import { getCustomRepository } from 'typeorm'
 import IUseCase from '../interfaces/IUseCase'
-import { UserRepositories } from '../repositories/UserRepositories'
+import  UserRepositories  from '../repositories/UserRepositories'
 import { hash } from 'bcryptjs'
 export default class CreateUser  implements IUseCase{
 
