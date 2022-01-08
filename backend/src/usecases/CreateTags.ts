@@ -7,7 +7,7 @@ export class CreateTags implements IUseCase {
     
     async handle({name}):Promise<any>{
         let tagsRespositories = getCustomRepository(TagRepositories)
-        console.log(name)
+    
         if(!name){
             throw new Error("Invalid name")
         }
