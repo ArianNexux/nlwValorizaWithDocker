@@ -8,7 +8,7 @@ export class CreateTags1640991440304 implements MigrationInterface {
             columns: [
                 { 
                     name: 'id',
-                    type:'uuid',
+                    type:'varchar',
                     isPrimary:true
                 },
                 { 
@@ -30,6 +30,7 @@ export class CreateTags1640991440304 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("tags")
     }
 
 }

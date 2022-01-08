@@ -5,8 +5,25 @@ import TagRepositories  from '../repositories/TagRepositories'
 
 export class CreateTags implements IUseCase {
     
-    async handle({name, email, admin}: IUserRequest):Promise<any>{
-        let tags = getCustomRepository(TagsRepositories)
+    async handle({name}):Promise<any>{
+        let tagsRespositories = getCustomRepository(TagRepositories)
+        console.log(name)
+        if(!name){
+            throw new Error("Invalid name")
+        }
+
+        const tagsAlreayExists = await tagsRespositories.findOne({ name })
+
+        if(tagsAlreayExists){
+            throw new Error("Tag name Already Exists")
+        }
+
+        const tag = tagsRespositories.create({ name })
+
+        await tagsRespositories.save(tag)
+
+        return tag
+        
 
 
 
