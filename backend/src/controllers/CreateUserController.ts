@@ -7,10 +7,10 @@ class CreateUserController {
     
     async handle(request: Request, response: Response): Promise<Response>{
       
-        const { name, email, admin } = request.body;
+        const { name, email, admin, password } = request.body;
         
         const createUserService = new CreateUser();
-        const user = await createUserService.handle({name, email, admin})
+        const user = await createUserService.handle({name, email, admin, password})
 
         return response.json(user)
 

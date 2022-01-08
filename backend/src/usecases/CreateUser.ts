@@ -5,7 +5,7 @@ import { UserRepositories } from '../repositories/UserRepositories'
 
 export default class CreateUser  implements IUseCase{
 
-    async handle({ name, email, admin}: IUserRequest): Promise<any> {
+    async handle({ name, email, admin, password}: IUserRequest): Promise<any> {
         
         const userRepository = getCustomRepository(UserRepositories);
 
@@ -15,7 +15,7 @@ export default class CreateUser  implements IUseCase{
 
         const userAlreadyExists = await userRepository.findOne({ 
             email
-         })
+        })
 
          if(userAlreadyExists){
              throw new Error("User Already Exists")
@@ -24,7 +24,8 @@ export default class CreateUser  implements IUseCase{
          const user = userRepository.create({
              name,
              email,
-             admin
+             admin,
+             password
          })
 
          await userRepository.save(user);

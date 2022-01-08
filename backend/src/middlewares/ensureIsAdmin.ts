@@ -3,7 +3,7 @@ import { Response, Request, NextFunction } from 'express'
 
 export default function ensureIsAdmin(request: Request, response: Response, next: NextFunction){
 
-    const admin = true;
+    const admin = false;
 
     if(admin){
         return next();
